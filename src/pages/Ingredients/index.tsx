@@ -61,6 +61,8 @@ import { apiBaseUrl as BaseUrl } from '@/utils/domain';
 import nprogress from 'nprogress';
 import 'nprogress/nprogress.css'; // 这个nprogress样式必须引入
 
+import ValidStatus from '@/components/ValidStatus';
+
 const showTotal: PaginationProps['showTotal'] = (total) => (
   <div
     style={{
@@ -94,7 +96,7 @@ import moment from 'moment';
 
 const { TextArea } = Input;
 
-export default class index extends Component {
+export class Output extends Component {
   formRef = React.createRef<FormInstance>();
   constructor(props) {
     super(props);
@@ -691,6 +693,16 @@ export default class index extends Component {
           />
         </div>
       </div>
+    );
+  }
+}
+
+export default class index extends Component {
+  render() {
+    return (
+      <ValidStatus>
+        <Output />
+      </ValidStatus>
     );
   }
 }

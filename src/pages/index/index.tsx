@@ -58,6 +58,8 @@ import excel from '@/assets/excel.png';
 import nprogress from 'nprogress';
 import 'nprogress/nprogress.css'; // 这个nprogress样式必须引入
 
+import ValidStatus from '@/components/ValidStatus';
+
 const showTotal: PaginationProps['showTotal'] = (total) => (
   <div
     style={{
@@ -83,7 +85,7 @@ const showTotal: PaginationProps['showTotal'] = (total) => (
   </div>
 );
 
-export default class index extends Component {
+export class Output extends Component {
   formRef = React.createRef<FormInstance>();
   constructor(props) {
     super(props);
@@ -201,7 +203,7 @@ export default class index extends Component {
   componentDidMount(): void {
     this.initData();
     this.serchData();
-    var y = document.getElementById('tableContainer').offsetHeight - 40;
+    var y = document.getElementById('tableContainer')?.offsetHeight - 40;
     this.setState({ y });
   }
 
@@ -690,6 +692,16 @@ export default class index extends Component {
           </div>
         </div>
       </Spin>
+    );
+  }
+}
+
+export default class index extends Component {
+  render() {
+    return (
+      <ValidStatus>
+        <Output />
+      </ValidStatus>
     );
   }
 }

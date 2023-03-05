@@ -1,7 +1,7 @@
 /* eslint-disable */
 import axios from 'axios';
 
-export async function request(url, options, func) {
+export async function request(url, options) {
   try {
     const axiosReponse = await axios(url, options);
     const retData = await dealResponse(axiosReponse);

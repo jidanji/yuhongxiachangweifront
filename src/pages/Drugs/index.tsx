@@ -62,6 +62,8 @@ import excel from '@/assets/excel.png';
 
 const { TextArea } = Input;
 
+import ValidStatus from '@/components/ValidStatus';
+
 const showTotal: PaginationProps['showTotal'] = (total) => (
   <div
     style={{
@@ -87,7 +89,7 @@ const showTotal: PaginationProps['showTotal'] = (total) => (
   </div>
 );
 
-export default class index extends Component {
+export class Output extends Component {
   formRef = React.createRef<FormInstance>();
   constructor(props) {
     super(props);
@@ -777,6 +779,16 @@ export default class index extends Component {
           </div>
         </div>
       </Spin>
+    );
+  }
+}
+
+export default class index extends Component {
+  render() {
+    return (
+      <ValidStatus>
+        <Output />
+      </ValidStatus>
     );
   }
 }
