@@ -6,7 +6,7 @@ const apiBaseUrlBase = {
 };
 
 const MathSoftAuthPlatForm = {
-  prod: 'http://139.224.193.145:7744',
+  prod: 'http://139.224.193.145:7744/admin',
   development: 'http://localhost:54904',
 };
 

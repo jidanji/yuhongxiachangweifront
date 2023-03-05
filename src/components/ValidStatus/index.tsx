@@ -23,7 +23,7 @@ class Index extends Component {
   }
 
   gotoLogin = () => {
-    window.location.href = 'http://139.224.193.145:7744/admin/login';
+    window.location.href = 'http://139.224.193.145:7744/admin/admin/login';
   };
 
   render() {
